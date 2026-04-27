@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR.XENO.EXE | The 10-Page Master Archive</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        rajdhani: ['Rajdhani', 'sans-serif'],
+                    },
+                    colors: {
+                        cyber: {
+                            purple: '#a855f7',
+                            dark: '#0f172a',
+                            neon: '#c084fc',
+                            gold: '#fbbf24',
+                            red: '#ef4444'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e2e8f0;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(168, 85, 247, 0.08), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.08), transparent 25%);
+            scroll-behavior: smooth;
+        }
+        .glitch-effect:hover {
+            text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9;
+            animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
+        .view-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+        .view-section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-btn.active {
+            border-bottom: 2px solid #c084fc;
+            color: #c084fc;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+    </style>
+</head>
+<body class="font-rajdhani min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- Global Background Audio -->
+    <audio id="bg-music" loop>
+        <source src="ride_it.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Navigation -->
+    <nav class="border-b border-cyber-purple/30 bg-black/80 backdrop-blur-xl sticky top-0 z-[100]">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('page1')">
+                    <i data-lucide="cpu" class="text-cyber-purple h-8 w-8"></i>
+                    <span class="font-orbitron font-bold text-xl tracking-tighter text-white glitch-effect">DR.XENO.EXE</span>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-4">
+                    <button onclick="showPage('page1')" class="nav-btn px-3 py-2 text-sm font-bold uppercase tracking-widest hover:text-cyber-neon transition-all">01.Admin</button>
+                    <button onclick="showPage('page2')" class="nav-btn px-3 py-2 text-sm font-bold uppercase tracking-widest hover:text-cyber-neon transition-all">02.YouTube</button>
+                    <button onclick="showPage('page3')" class="nav-btn px-3 py-2 text-sm font-bold uppercase tracking-widest hover:text-cyber-neon transition-all">03.Insta</button>
+                    <button onclick="showPage('page4')" class="nav-btn px-3 py-2 text-sm font-bold uppercase tracking-widest hover:text-cyber-neon transition-all">04.FB</button>
+                    <button onclick="showPage('page5')" class="nav-btn px-3 py-2 text-sm font-bold uppercase tracking-widest hover:text-cyber-neon transition-all">05.Map</button>
+                    <button onclick="showPage('page6')" class="nav-btn px-3 py-2 text-sm font-bold uppercase tracking-widest hover:text-cyber-neon transition-all text-cyber-purple">06.XENO.AI</button>
+                    <button onclick="showPage('page9')" class="nav-btn px-3 py-2 text-sm font-bold uppercase tracking-widest hover:text-cyber-neon transition-all">09.Titan/Naruto</button>
+                    <button onclick="showPage('page10')" class="nav-btn px-3 py-2 text-sm font-bold uppercase tracking-widest hover:text-cyber-neon transition-all">10.MHA/SAO</button>
+                </div>
+
+                <button id="music-toggle" class="p-2 rounded-full border border-cyber-purple/50 text-cyber-purple hover:bg-cyber-purple hover:text-white transition-all">
+                    <i data-lucide="volume-2" id="music-icon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="flex-grow">
+        
+        <!-- PAGE 1: ADMIN HOME -->
+        <section id="page1" class="view-section active p-8 lg:p-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h1 class="text-6xl md:text-8xl font-orbitron font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyber-purple mb-6 glitch-effect uppercase">System Admin</h1>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">Accessing the root directory of DR.XENO.EXE. All systems operational. Visual data loaded below.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-panel p-4 rounded-2xl group">
+                        <img src="admin_photo1.jpg" alt="Admin 1" class="w-full h-96 object-cover rounded-xl group-hover:scale-[1.02] transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80'">
+                        <div class="mt-4 flex justify-between items-center px-2">
+                            <span class="font-orbitron text-cyber-neon">IDENTITY_FILE_01</span>
+                            <span class="text-xs text-gray-500">AUTHORIZED ACCESS ONLY</span>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-4 rounded-2xl group">
+                        <img src="admin_photo2.jpg" alt="Admin 2" class="w-full h-96 object-cover rounded-xl group-hover:scale-[1.02] transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'">
+                        <div class="mt-4 flex justify-between items-center px-2">
+                            <span class="font-orbitron text-cyber-neon">IDENTITY_FILE_02</span>
+                            <span class="text-xs text-gray-500">SYSTEM ARCHIVE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: YOUTUBE -->
+        <section id="page2" class="view-section p-8 lg:p-20">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center gap-12 mb-16">
+                    <div class="w-48 h-48 rounded-full border-4 border-red-600 p-2">
+                        <div class="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
+                            <i data-lucide="youtube" class="w-20 h-20 text-red-600"></i>
+                        </div>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h2 class="text-5xl font-orbitron font-bold text-white mb-4">DR_XENOEXE.TV</h2>
+                        <p class="text-gray-400 mb-6">Uploading high-octane anime edits and technical breakdowns. Join the 100k+ synchronization.</p>
+                        <a href="https://youtube.com/@dr_xenoexe?si=am70MZf6bzB9M12_" target="_blank" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition-all inline-flex items-center gap-2">
+                            <i data-lucide="play-circle"></i> SUBSCRIBED_TO_CHANNEL
+                        </a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-black border border-red-900/30 rounded-xl p-6 hover:border-red-600 transition-colors">
+                        <div class="aspect-video bg-gray-900 rounded-lg mb-4 flex items-center justify-center">
+                            <span class="text-gray-600 font-mono">[LATEST_UPLOAD.MP4]</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">The Ultimate Titan Edit</h4>
+                        <p class="text-sm text-gray-500">1.2M Views • 2 Days ago</p>
+                    </div>
+                    <div class="bg-black border border-red-900/30 rounded-xl p-6 hover:border-red-600 transition-colors">
+                        <div class="aspect-video bg-gray-900 rounded-lg mb-4 flex items-center justify-center">
+                            <span class="text-gray-600 font-mono">[VIRAL_SHORT.MP4]</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Naruto vs Pain: 4K Remaster</h4>
+                        <p class="text-sm text-gray-500">3.5M Views • 1 Month ago</p>
+                    </div>
+                    <div class="bg-black border border-red-900/30 rounded-xl p-6 hover:border-red-600 transition-colors">
+                        <div class="aspect-video bg-gray-900 rounded-lg mb-4 flex items-center justify-center">
+                            <span class="text-gray-600 font-mono">[CORE_MEMORY.MP4]</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Top 10 Masterpiece Anime</h4>
+                        <p class="text-sm text-gray-500">500k Views • 1 Week ago</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 3: INSTAGRAM -->
+        <section id="page3" class="view-section p-8 lg:p-20">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="text-4xl font-orbitron font-bold text-pink-500">@DR.XENO.EXE</h2>
+                        <p class="text-gray-400">Visual Aesthetic Archive / Story Highlights</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="text-center"><span class="block font-bold text-xl">420</span><span class="text-xs text-gray-500">POSTS</span></div>
+                        <div class="text-center"><span class="block font-bold text-xl">12k</span><span class="text-xs text-gray-500">FOLLOWERS</span></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="aspect-square bg-gradient-to-br from-purple-900 to-pink-900 rounded-lg overflow-hidden group border border-pink-500/20">
+                        <img src="https://images.unsplash.com/photo-1618336753974-aae8e04506aa?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all">
+                    </div>
+                    <div class="aspect-square bg-gradient-to-br from-purple-900 to-pink-900 rounded-lg overflow-hidden group border border-pink-500/20">
+                        <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all">
+                    </div>
+                    <div class="aspect-square bg-gradient-to-br from-purple-900 to-pink-900 rounded-lg overflow-hidden group border border-pink-500/20">
+                        <img src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all">
+                    </div>
+                    <div class="aspect-square bg-gradient-to-br from-purple-900 to-pink-900 rounded-lg overflow-hidden group border border-pink-500/20">
+                        <img src="https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all">
+                    </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <a href="https://www.instagram.com/dr.xeno.exe?igsh=aGx2MXg1Zmtlc2Jr" target="_blank" class="border border-pink-500 text-pink-500 py-3 px-10 rounded hover:bg-pink-500 hover:text-white transition-all font-orbitron uppercase tracking-widest text-sm">Follow the Aesthetic</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: FACEBOOK -->
+        <section id="page4" class="view-section p-8 lg:p-20">
+            <div class="max-w-4xl mx-auto glass-panel rounded-3xl overflow-hidden border-blue-500/30">
+                <div class="h-48 bg-blue-900/50 relative">
+                    <div class="absolute -bottom-12 left-8 w-24 h-24 bg-gray-900 rounded-xl border-4 border-black flex items-center justify-center">
+                        <i data-lucide="facebook" class="w-12 h-12 text-blue-500"></i>
+                    </div>
+                </div>
+                <div class="pt-16 pb-8 px-8">
+                    <h2 class="text-3xl font-orbitron font-bold">Dr. Xeno Official Hub</h2>
+                    <p class="text-gray-400 mt-2">Community discussions, fan theories, and event announcements.</p>
+                    <div class="mt-8 space-y-4">
+                        <div class="bg-black/40 p-4 rounded-lg border border-white/5">
+                            <p class="text-sm text-blue-400 font-bold mb-2">NEW ANNOUNCEMENT</p>
+                            <p class="text-gray-300 italic">"The Season 4 breakdown for Attack on Titan is now live. Let's discuss the final scene..."</p>
+                        </div>
+                        <button class="w-full bg-blue-600 py-4 rounded font-bold uppercase tracking-widest hover:bg-blue-700 transition-all">JOIN COMMUNITY ON FB</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 5: LOCATION MAP -->
+        <section id="page5" class="view-section p-8 lg:p-20">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-orbitron font-bold text-center mb-12">GLOBAL BEACON</h2>
+                <div class="aspect-video glass-panel rounded-3xl overflow-hidden relative border-green-500/30">
+                    <div class="absolute inset-0 bg-green-500/5 flex flex-col items-center justify-center p-10 text-center">
+                        <i data-lucide="map" class="w-20 h-20 text-green-500 mb-6 opacity-50"></i>
+                        <h3 class="text-2xl font-orbitron text-green-400 mb-4">DR.XENO.EXE BASE OF OPERATIONS</h3>
+                        <p class="font-mono text-gray-500">COORD: 35.6895° N, 139.6917° E (ARCHIVE SIGNAL)</p>
+                        <div class="mt-10 flex gap-4">
+                            <a href="https://share.google/OB4h3hSPa9WLPBX9P" target="_blank" class="bg-green-600 px-8 py-3 rounded-full font-bold hover:bg-green-700 transition-all">OPEN GOOGLE MAPS</a>
+                        </div>
+                    </div>
+                    <!-- Mock Map Grid -->
+                    <div class="absolute inset-0 pointer-events-none opacity-20" style="background-image: linear-gradient(rgba(34, 197, 94, 0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(34, 197, 94, 0.2) 1px, transparent 1px); background-size: 50px 50px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 6: AI CORE -->
+        <section id="page6" class="view-section p-8 lg:p-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-orbitron font-bold text-white uppercase tracking-widest mb-4 flex justify-center items-center gap-3">
+                        <i data-lucide="terminal" class="text-cyber-purple h-8 w-8"></i> XENO.AI CORE
+                    </h2>
+                    <p class="text-gray-400">Deep neural analysis of anime data streams.</p>
+                </div>
+                <div class="bg-gray-900 border border-cyber-purple/50 rounded-lg p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="flex flex-col gap-4">
+                            <input type="text" id="anime-input" placeholder="Query: Subject Title..." class="w-full bg-black border border-gray-700 text-white p-3 rounded focus:border-cyber-purple outline-none">
+                            <button onclick="evaluateSubject()" class="w-full bg-cyber-purple/20 border border-cyber-purple text-cyber-neon hover:bg-cyber-purple hover:text-white py-3 rounded transition-all font-orbitron">EVALUATE SUBJECT</button>
+                        </div>
+                        <div class="flex items-end">
+                            <button onclick="extractGems()" class="w-full bg-blue-900/30 border border-blue-500 text-blue-400 hover:bg-blue-600 hover:text-white py-3 rounded transition-all font-orbitron">EXTRACT DEEP-WEB GEMS</button>
+                        </div>
+                    </div>
+                    <div class="bg-black p-4 font-mono text-sm h-64 overflow-y-auto text-green-500 rounded border border-gray-800" id="terminal">
+                        > XENO.AI ONLINE...<br>
+                        > AWAITING UPLINK...
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 7: MASTERPIECES -->
+        <section id="page7" class="view-section p-8 lg:p-20">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-orbitron font-bold text-center mb-16 uppercase tracking-widest">Masterpiece Database</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-panel p-6 rounded-2xl border-t-4 border-cyber-purple">
+                        <h3 class="text-2xl font-orbitron mb-4">Steins;Gate</h3>
+                        <p class="text-gray-400 mb-6">The definitive time-travel thriller. Logic meets extreme emotional weight.</p>
+                        <div class="flex justify-between items-center text-xs font-bold text-cyber-neon">
+                            <span>SCORE: 10/10</span>
+                            <span>STATUS: ARCHIVED</span>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border-t-4 border-cyber-purple">
+                        <h3 class="text-2xl font-orbitron mb-4">FMA: Brotherhood</h3>
+                        <p class="text-gray-400 mb-6">Equivalence exchange at its finest. A perfect narrative cycle.</p>
+                        <div class="flex justify-between items-center text-xs font-bold text-cyber-neon">
+                            <span>SCORE: 9.8/10</span>
+                            <span>STATUS: ARCHIVED</span>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl border-t-4 border-cyber-purple">
+                        <h3 class="text-2xl font-orbitron mb-4">Monster</h3>
+                        <p class="text-gray-400 mb-6">Johan Liebert: the ultimate psychological antagonist. Masterful pacing.</p>
+                        <div class="flex justify-between items-center text-xs font-bold text-cyber-neon">
+                            <span>SCORE: 9.9/10</span>
+                            <span>STATUS: ARCHIVED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 8: LEGACY -->
+        <section id="page8" class="view-section p-8 lg:p-20">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-5xl font-orbitron font-black mb-12 text-cyber-gold">LEGACY ARCHIVE</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="bg-cyber-gold/5 border border-cyber-gold/20 p-8 rounded-3xl">
+                        <h3 class="text-2xl font-orbitron text-cyber-gold mb-4">Neon Genesis Evangelion</h3>
+                        <p class="text-gray-400 italic">"The precursor to all modern psychological deconstruction. A system glitch in the human soul."</p>
+                    </div>
+                    <div class="bg-cyber-gold/5 border border-cyber-gold/20 p-8 rounded-3xl">
+                        <h3 class="text-2xl font-orbitron text-cyber-gold mb-4">Cowboy Bebop</h3>
+                        <p class="text-gray-400 italic">"Jazz, Space, and the weight of the past. See you space cowboy."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 9: TITAN, NARUTO, ONE PIECE -->
+        <section id="page9" class="view-section p-8 lg:p-20">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-orbitron font-bold text-center mb-16 text-white uppercase">The Pillars of Anime</h2>
+                <div class="space-y-12">
+                    <!-- AOT -->
+                    <div class="flex flex-col md:flex-row gap-8 bg-gray-900/50 p-8 rounded-3xl border border-red-500/20">
+                        <div class="md:w-1/3 h-64 bg-red-900/20 rounded-2xl flex items-center justify-center font-orbitron text-red-500 font-bold">TITAN_FILE.EXE</div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-3xl font-orbitron font-bold text-red-500 mb-4">Attack on Titan</h3>
+                            <p class="text-gray-400 leading-relaxed">A story that redefined what is possible in anime. Eren Yeager's descent from victim to world-ending force remains the most debated character arc in history. Themes of freedom, cyclical hatred, and the cost of survival.</p>
+                        </div>
+                    </div>
+                    <!-- NARUTO -->
+                    <div class="flex flex-col md:flex-row-reverse gap-8 bg-gray-900/50 p-8 rounded-3xl border border-orange-500/20">
+                        <div class="md:w-1/3 h-64 bg-orange-900/20 rounded-2xl flex items-center justify-center font-orbitron text-orange-500 font-bold">SHINOBI_FILE.EXE</div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-3xl font-orbitron font-bold text-orange-500 mb-4">Naruto Shippuden</h3>
+                            <p class="text-gray-400 leading-relaxed">The tale of an outcast who changed the world through sheer willpower and the power of bonds. The philosophy of Pain and the tragedy of Itachi Uchiha elevated this series into a psychological masterpiece.</p>
+                        </div>
+                    </div>
+                    <!-- ONE PIECE -->
+                    <div class="flex flex-col md:flex-row gap-8 bg-gray-900/50 p-8 rounded-3xl border border-blue-500/20">
+                        <div class="md:w-1/3 h-64 bg-blue-900/20 rounded-2xl flex items-center justify-center font-orbitron text-blue-500 font-bold">PIRATE_FILE.EXE</div>
+                        <div class="md:w-2/3">
+                            <h3 class="text-3xl font-orbitron font-bold text-blue-500 mb-4">One Piece</h3>
+                            <p class="text-gray-400 leading-relaxed">The greatest world-building in fiction. Over 1000 episodes of world-spanning mystery, joyboy's return, and the struggle against the World Government. The scale is unmatched.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 10: MHA, SAO, & MODERN ERA -->
+        <section id="page10" class="view-section p-8 lg:p-20">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-orbitron font-bold text-center mb-16 text-cyber-purple uppercase">New Gen & Virtual Worlds</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-panel p-10 rounded-3xl border-l-8 border-green-500">
+                        <h3 class="text-3xl font-orbitron text-green-500 mb-6">My Hero Academia</h3>
+                        <p class="text-gray-400 mb-6">A modern deconstruction of what it means to be a hero in a society defined by quirks. All Might's legacy vs the rise of Shigaraki.</p>
+                        <ul class="text-sm space-y-2 text-gray-500 font-mono">
+                            <li>> DATA_PKT: Season 7 Active</li>
+                            <li>> HERO_RATING: S-Rank</li>
+                        </ul>
+                    </div>
+                    <div class="glass-panel p-10 rounded-3xl border-l-8 border-blue-400">
+                        <h3 class="text-3xl font-orbitron text-blue-400 mb-6">Sword Art Online</h3>
+                        <p class="text-gray-400 mb-6">The gateway for millions into the Isekai genre. Exploration of virtual reality, consciousness, and survival in digital landscapes.</p>
+                        <ul class="text-sm space-y-2 text-gray-500 font-mono">
+                            <li>> DATA_PKT: Alicization Log</li>
+                            <li>> VR_STATUS: Link Start</li>
+                        </ul>
+                    </div>
+                    <div class="md:col-span-2 glass-panel p-10 rounded-3xl border-l-8 border-cyber-purple">
+                        <h3 class="text-3xl font-orbitron text-cyber-purple mb-6">Honorable Mentions</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-cyber-purple/10 transition-all cursor-pointer">Demon Slayer</div>
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-cyber-purple/10 transition-all cursor-pointer">Jujutsu Kaisen</div>
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-cyber-purple/10 transition-all cursor-pointer">Hunter x Hunter</div>
+                            <div class="p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-cyber-purple/10 transition-all cursor-pointer">Vinland Saga</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="bg-black border-t border-cyber-purple/30 py-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
+            <div class="flex gap-8 mb-8">
+                <a href="https://youtube.com/@dr_xenoexe?si=am70MZf6bzB9M12_" target="_blank" class="text-gray-500 hover:text-red-500 transition-all"><i data-lucide="youtube"></i></a>
+                <a href="https://www.instagram.com/dr.xeno.exe?igsh=aGx2MXg1Zmtlc2Jr" target="_blank" class="text-gray-500 hover:text-pink-500 transition-all"><i data-lucide="instagram"></i></a>
+                <a href="https://www.facebook.com/share/1U8rgRjm7J/" target="_blank" class="text-gray-500 hover:text-blue-500 transition-all"><i data-lucide="facebook"></i></a>
+            </div>
+            <p class="font-orbitron text-xs text-gray-600">&copy; 2026 DR.XENO.EXE | QUANTUM ENCRYPTION ACTIVE</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide
+        lucide.createIcons();
+
+        // Audio Handling
+        const audio = document.getElementById('bg-music');
+        const musicBtn = document.getElementById('music-toggle');
+        const musicIcon = document.getElementById('music-icon');
+        let isPlaying = false;
+
+        musicBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                musicIcon.setAttribute('data-lucide', 'volume-x');
+            } else {
+                audio.play().catch(e => console.log("User interaction required first"));
+                musicIcon.setAttribute('data-lucide', 'volume-2');
+            }
+            isPlaying = !isPlaying;
+            lucide.createIcons();
+        });
+
+        // Navigation Handling
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.view-section').forEach(page => {
+                page.classList.remove('active');
+            });
+            // Show target page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.innerText.toLowerCase().includes(pageId.replace('page',''))) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // XENO.AI Logic
+        function writeToTerminal(text) {
+            const terminal = document.getElementById('terminal');
+            const line = document.createElement('div');
+            line.innerHTML = `> ${text}`;
+            terminal.appendChild(line);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        function evaluateSubject() {
+            const input = document.getElementById('anime-input').value;
+            if(!input) return;
+            writeToTerminal(`ANALYZING: ${input.toUpperCase()}...`);
+            setTimeout(() => {
+                writeToTerminal(`[SYSTEM_RESULT]: ${input.toUpperCase()} detected as a potential masterpiece.`);
+                writeToTerminal(`VIBE_CHECK: Critical Success.`);
+            }, 800);
+        }
+
+        function extractGems() {
+            writeToTerminal("SCANNING DEEP ARCHIVES...");
+            setTimeout(() => {
+                const gems = ["Vivy: Fluorite Eye's Song", "86 Eighty-Six", "Made in Abyss", "Odd Taxi"];
+                const pick = gems[Math.floor(Math.random() * gems.length)];
+                writeToTerminal(`[FOUND]: Hidden Gem Extracted: ${pick}`);
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
